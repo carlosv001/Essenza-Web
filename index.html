@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essenza | Portfolio Académico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro: #C29A6C;
+            --cafe: #2D1B14;
+            --crema: #FDF8F3;
+        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--crema); color: var(--cafe); scroll-smooth: always; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(45, 27, 20, 0.7), rgba(45, 27, 20, 0.7)), url('./hero.jpg');
+            background-size: cover; background-position: center;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="./logo.jpg" onerror="this.src='./logo.png'" alt="Logo" class="h-10 w-10 object-contain">
+                <span class="text-xl font-bold tracking-tighter serif uppercase">Essenza</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-[--oro]">Inicio</a>
+                <a href="#estrategia" class="hover:text-[--oro]">Estrategia</a>
+                <a href="#productos" class="hover:text-[--oro]">Gama</a>
+                <a href="#ruleta" class="bg-[--cafe] text-white px-4 py-2 rounded-full hover:bg-[--oro] transition">Experiencia</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-bg h-screen flex items-center justify-center text-center text-white">
+        <div class="px-6 max-w-4xl">
+            <h1 class="text-6xl md:text-8xl mb-4">ESSENZA</h1>
+            <p class="text-xl md:text-2xl italic serif mb-8 opacity-90">"Lo que tomas, te representa"</p>
+            <p class="text-sm tracking-[0.3em] uppercase font-light border-y border-white/30 py-4">Café de especialidad con presencia</p>
+        </div>
+    </header>
+
+    <section id="estrategia" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl serif mb-6">Posicionamiento</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    Essenza se posiciona como una marca de **café de especialidad** que transforma el consumo cotidiano en una experiencia sensorial premium, accesible y sostenible.
+                </p>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white border-l-4 border-[--oro] shadow-sm">
+                        <span class="block font-bold text-xs uppercase mb-1">Diferenciación Clave</span>
+                        <p class="text-xs text-stone-500 italic">Puntuación >80/100 SCA, trazabilidad completa y tueste artesanal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[--cafe] p-8 rounded-2xl text-white shadow-2xl">
+                <h3 class="text-xl serif text-[--oro] mb-4">Variables Internas</h3>
+                <ul class="space-y-4 text-sm font-light">
+                    <li><strong>Motivación:</strong> Satisface estatus y conciencia ecológica.</li>
+                    <li><strong>Percepción:</strong> Estímulos multisensoriales (Aroma/Color).</li>
+                    <li><strong>Aprendizaje:</strong> Condicionamiento operante positivo.</li>
+                    <li><strong>Personalidad:</strong> Autocongruencia con el yo sofisticado.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="py-24 bg-stone-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl serif text-center mb-16 text-[--cafe]">Gama de Productos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-black">
+                    <h4 class="text-xl serif mb-2">Essenza Puro</h4>
+                    <p class="text-xs text-stone-500 mb-4">Doble espresso, vaso-cafetera artesanal.</p>
+                    <img src="./hero.jpg" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <span class="text-[--oro] font-bold">Autenticidad</span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[--oro]">
+                    <h4 class="text-xl serif mb-2">Essenza Calma</h4>
+                    <p class="text-xs text-stone-500 mb-4">Vainilla, canela y leche espumada.</p>
+                    <img src="./cafe1.jpg" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <span class="text-[--oro] font-bold">Confort Emocional</span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#3D2B1F]">
+                    <h4 class="text-xl serif mb-2">Essenza Intenso</h4>
+                    <p class="text-xs text-stone-500 mb-4">Doble espresso, cacao y canela.</p>
+                    <img src="./cafe2.jpg" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <span class="text-[--oro] font-bold">Sofisticación</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ruleta" class="py-24 text-center bg-white border-t border-stone-100">
+        <h2 class="text-4xl serif mb-4 text-[--cafe]">Ruleta de Persuasión</h2>
+        <p class="text-stone-500 mb-12 uppercase tracking-[0.3em] text-[10px] font-bold">Escasez, Autoridad y Reciprocidad</p>
+        
+        <div class="wheel-container mb-12 relative flex justify-center items-center">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-red-700 z-30"></div>
+            <div id="wheelWrapper" class="transition-transform duration-[5000ms] ease-[cubic-bezier(0.15, 0, 0.15, 1)]">
+                <svg width="350" height="350" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" fill="#2D1B14" stroke="#C29A6C" stroke-width="1"/>
+                    <path d="M50 50 L50 2 A48 48 0 0 1 83.9 14.1 Z" fill="#000000" stroke="#fff" stroke-width="0.2"/>
+                    <path d="M50 50 L83.9 14.1 A48 48 0 0 1 98 50 Z" fill="#FDF8F3" stroke="#2D1B14" stroke-width="0.2"/>
+                    <path d="M50 50 L98 50 A48 48 0 0 1 83.9 85.9 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
+                    <path d="M50 50 L83.9 85.9 A48 48 0 0 1 50 98 Z" fill="#C29A6C" stroke="#2D1B14" stroke-width="0.2"/>
+                    <path d="M50 50 L50 98 A48 48 0 0 1 16.1 85.9 Z" fill="#000000" stroke="#fff" stroke-width="0.2"/>
+                    <path d="M50 50 L16.1 85.9 A48 48 0 0 1 2 50 Z" fill="#FDF8F3" stroke="#2D1B14" stroke-width="0.2"/>
+                    <path d="M50 50 L2 50 A48 48 0 0 1 16.1 14.1 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
+                    <path d="M50 50 L16.1 14.1 A48 48 0 0 1 50 2 Z" fill="#C29A6C" stroke="#2D1B14" stroke-width="0.2"/>
+                    <circle cx="50" cy="50" r="6" fill="#FDF8F3" stroke="#C29A6C" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+
+        <button onclick="spin()" id="spinBtn" class="bg-[--cafe] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest shadow-xl hover:bg-[--oro] transition-all">¡Probar Suerte!</button>
+        
+        <div id="resultBox" class="hidden mt-10 p-6 bg-[#FDF8F3] border-2 border-double border-[--oro] rounded-xl max-w-sm mx-auto shadow-lg animate-bounce">
+            <p id="result" class="text-xl font-serif font-bold text-[--cafe]"></p>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white text-center border-t border-stone-100">
+        <p class="text-[10px] tracking-[0.5em] text-stone-400 uppercase">Essenza: caffè con presenza © 2026</p>
+    </footer>
+
+    <script>
+        function spin() {
+            const wheel = document.getElementById('wheelWrapper');
+            const btn = document.getElementById('spinBtn');
+            const res = document.getElementById('result');
+            const box = document.getElementById('resultBox');
+
+            btn.disabled = true;
+            btn.innerText = "Girando...";
+
+            // Probabilidades: Ciao! (50%), 10% (30%), 50% (15%), Taza (5%)
+            const rand = Math.random() * 100;
+            let targetGajo = 0; 
+
+            if (rand < 50) targetGajo = [0, 2, 4, 6][Math.floor(Math.random()*4)];
+            else if (rand < 80) targetGajo = [1, 7][Math.floor(Math.random()*2)];
+            else if (rand < 95) targetGajo = 3; 
+            else targetGajo = 5; 
+
+            const degreesPerGajo = 45;
+            const stopAngle = (targetGajo * degreesPerGajo);
+            const totalRotation = 3600 - stopAngle; 
+
+            wheel.style.transform = `rotate(${totalRotation}deg)`;
+
+            setTimeout(() => {
+                const premiosText = [
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento",              
+                    "Más suerte a la próxima. Ciao!", 
+                    "50% de descuento",              
+                    "Más suerte a la próxima. Ciao!", 
+                    "Taza pequeña de regalo",         
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento"               
+                ];
+                
+                box.classList.remove('hidden');
+                res.innerText = premiosText[targetGajo].toUpperCase();
+                btn.innerText = "¡Hecho!";
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
