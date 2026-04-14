@@ -75,12 +75,15 @@
     </section>
 
     <section id="ruleta" class="py-24 bg-[--cafe] text-white text-center">
-        <h2 class="text-4xl serif mb-12">Prueba tu Suerte</h2>
+        <h2 class="text-4xl serif mb-12 text-[--oro]">Experiencia Essenza</h2>
+        
         <div class="flex justify-center mb-10 relative">
-            <div class="absolute -top-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-red-600 z-20"></div>
+            <div class="absolute -top-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-red-600 z-30"></div>
+            
             <div id="wheelWrapper" class="transition-transform duration-[5000ms] ease-[cubic-bezier(0.15,0,0.15,1)]">
-                <svg width="300" height="300" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" fill="#C29A6C" stroke="#fff" stroke-width="1"/>
+                <svg width="380" height="380" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" fill="#C29A6C" stroke="#fff" stroke-width="0.5"/>
+                    
                     <path d="M50 50 L50 2 A48 48 0 0 1 83.9 14.1 Z" fill="#000" stroke="#fff" stroke-width="0.2"/>
                     <path d="M50 50 L83.9 14.1 A48 48 0 0 1 98 50 Z" fill="#FDF8F3" stroke="#000" stroke-width="0.2"/>
                     <path d="M50 50 L98 50 A48 48 0 0 1 83.9 85.9 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
@@ -89,43 +92,90 @@
                     <path d="M50 50 L16.1 85.9 A48 48 0 0 1 2 50 Z" fill="#FDF8F3" stroke="#000" stroke-width="0.2"/>
                     <path d="M50 50 L2 50 A48 48 0 0 1 16.1 14.1 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
                     <path d="M50 50 L16.1 14.1 A48 48 0 0 1 50 2 Z" fill="#C29A6C" stroke="#000" stroke-width="0.2"/>
+
+                    <g font-family="Arial" font-size="1.8" font-weight="bold" text-anchor="middle">
+                        <text transform="rotate(22.5 50 50) translate(0 -38)" fill="#fff">Ciao!</text>
+                        <text transform="rotate(67.5 50 50) translate(0 -38)" fill="#000">10% Dto</text>
+                        <text transform="rotate(112.5 50 50) translate(0 -38)" fill="#fff">Ciao!</text>
+                        <text transform="rotate(157.5 50 50) translate(0 -38)" fill="#000">50% Dto</text>
+                        <text transform="rotate(202.5 50 50) translate(0 -38)" fill="#fff">Ciao!</text>
+                        <text transform="rotate(247.5 50 50) translate(0 -38)" fill="#000">Taza</text>
+                        <text transform="rotate(292.5 50 50) translate(0 -38)" fill="#fff">Ciao!</text>
+                        <text transform="rotate(337.5 50 50) translate(0 -38)" fill="#000">10% Dto</text>
+                    </g>
+                    
+                    <circle cx="50" cy="50" r="6" fill="#FDF8F3" stroke="#C29A6C" stroke-width="1"/>
                 </svg>
             </div>
         </div>
-        <button onclick="spin()" id="spinBtn" class="bg-[--oro] text-[--cafe] px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition">Girar Ruleta</button>
-        <div id="resultBox" class="hidden mt-8 text-2xl font-serif text-[--oro] animate-pulse"></div>
+
+        <button onclick="spin()" id="spinBtn" class="bg-[--oro] text-[--cafe] px-12 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">
+            Probar Suerte
+        </button>
+        
+        <div id="resultBox" class="hidden mt-10 p-6 bg-white border-2 border-[--oro] rounded-xl max-w-sm mx-auto animate-bounce">
+            <p id="resultText" class="text-xl font-serif font-bold text-[--cafe]"></p>
+        </div>
     </section>
 
     <footer class="py-10 text-center opacity-50 text-[10px] uppercase tracking-[0.5em]">Essenza 2026</footer>
 
     <script>
+        <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
         function spin() {
             const wheel = document.getElementById('wheelWrapper');
             const btn = document.getElementById('spinBtn');
-            const res = document.getElementById('resultBox');
-            btn.disabled = true;
-            
-            const rand = Math.random() * 100;
-            let target = 0; // "Ciao"
-            if (rand < 50) target = 0; 
-            else if (rand < 80) target = 1; // 10%
-            else if (rand < 95) target = 3; // 50%
-            else target = 5; // Taza
+            const resBox = document.getElementById('resultBox');
+            const resText = document.getElementById('resultText');
 
-            const deg = 3600 - (target * 45);
-            wheel.style.transform = `rotate(${deg}deg)`;
+            btn.disabled = true;
+            btn.innerText = "Girando...";
+
+            // Lógica de probabilidad estricta (<1% para los premios grandes):
+            const rand = Math.random() * 100;
+            let targetGajo = 0; 
+
+            if (rand < 0.5) {
+                targetGajo = 3; // 50% de descuento (Probabilidad de 0.5%)
+            } else if (rand < 1.0) {
+                targetGajo = 5; // Taza pequeña gratis (Probabilidad de 0.5%)
+            } else if (rand < 60) {
+                // Sale "Ciao!" (Casi un 60% de las veces)
+                targetGajo = [0, 2, 4, 6][Math.floor(Math.random() * 4)];
+            } else {
+                // Sale "10% de descuento" (Casi un 40% de las veces)
+                targetGajo = [1, 7][Math.floor(Math.random() * 2)];
+            }
+
+            const degreesPerGajo = 45;
+            const extraSpins = 3600; 
+            const totalRotation = extraSpins - (targetGajo * degreesPerGajo);
+
+            wheel.style.transform = `rotate(${totalRotation}deg)`;
 
             setTimeout(() => {
-                const premios = ["Más suerte a la próxima. Ciao!", "10% de Descuento", "Más suerte a la próxima. Ciao!", "50% de descuento", "Más suerte a la próxima. Ciao!", "Café pequeño de regalo", "Más suerte a la próxima. Ciao!", "10% de descuento"];
-                res.classList.remove('hidden');
-                res.innerText = premios[target];
-                btn.innerText = "¡Suerte!";
+                // TEXTOS EXACTOS SOLICITADOS
+                const premios = [
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento",               
+                    "Más suerte a la próxima. Ciao!", 
+                    "50% de descuento",               
+                    "Más suerte a la próxima. Ciao!", 
+                    "Taza pequeña gratis",             
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento"                
+                ];
+                
+                resBox.classList.remove('hidden');
+                resText.innerText = premios[targetGajo];
+                btn.innerText = "¡Hecho!";
             }, 5000);
         }
-        function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('hidden');
-    }
     </script>
 </body>
 </html>
