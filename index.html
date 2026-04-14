@@ -19,31 +19,31 @@
 <body class="scroll-smooth">
 
     <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-stone-200">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <img src="logo.jpg" alt="Logo" class="h-10 w-10 object-contain">
-            <span class="text-xl font-bold tracking-tighter serif uppercase">Essenza</span>
-        </div>
-        
-        <button onclick="toggleMenu()" class="md:hidden text-[--cafe] focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo" class="h-10 w-10 object-contain">
+                <span class="text-xl font-bold tracking-tighter serif uppercase">Essenza</span>
+            </div>
+            
+            <button onclick="toggleMenu()" class="md:hidden text-[--cafe] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
 
-        <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
-            <a href="#inicio" class="hover:text-[--oro]">Inicio</a>
-            <a href="#productos" class="hover:text-[--oro]">Gama</a>
-            <a href="#ruleta" class="bg-[--cafe] text-white px-4 py-2 rounded-full hover:bg-[--oro] transition">Jugar</a>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-[--oro]">Inicio</a>
+                <a href="#productos" class="hover:text-[--oro]">Gama</a>
+                <a href="#ruleta" class="bg-[--cafe] text-white px-4 py-2 rounded-full hover:bg-[--oro] transition">Experiencia</a>
+            </div>
         </div>
-    </div>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 flex flex-col items-center py-4 space-y-4 text-[10px] font-bold uppercase tracking-widest">
-        <a href="#inicio" onclick="toggleMenu()" class="hover:text-[--oro]">Inicio</a>
-        <a href="#productos" onclick="toggleMenu()" class="hover:text-[--oro]">Gama</a>
-        <a href="#ruleta" onclick="toggleMenu()" class="text-[--oro]">Jugar ahora</a>
-    </div>
-</nav>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 flex flex-col items-center py-4 space-y-4 text-[10px] font-bold uppercase tracking-widest">
+            <a href="#inicio" onclick="toggleMenu()" class="hover:text-[--oro]">Inicio</a>
+            <a href="#productos" onclick="toggleMenu()" class="hover:text-[--oro]">Gama</a>
+            <a href="#ruleta" onclick="toggleMenu()" class="text-[--oro]">Experiencia</a>
+        </div>
+    </nav>
 
     <header id="inicio" class="hero-bg h-screen flex items-center justify-center text-center text-white">
         <div class="px-6 max-w-4xl">
@@ -83,7 +83,6 @@
             <div id="wheelWrapper" class="transition-transform duration-[5000ms] ease-[cubic-bezier(0.15,0,0.15,1)]">
                 <svg width="380" height="380" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="48" fill="#C29A6C" stroke="#fff" stroke-width="0.5"/>
-                    
                     <path d="M50 50 L50 2 A48 48 0 0 1 83.9 14.1 Z" fill="#000" stroke="#fff" stroke-width="0.2"/>
                     <path d="M50 50 L83.9 14.1 A48 48 0 0 1 98 50 Z" fill="#FDF8F3" stroke="#000" stroke-width="0.2"/>
                     <path d="M50 50 L98 50 A48 48 0 0 1 83.9 85.9 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
@@ -103,7 +102,6 @@
                         <text transform="rotate(292.5 50 50) translate(0 -38)" fill="#fff">Ciao!</text>
                         <text transform="rotate(337.5 50 50) translate(0 -38)" fill="#000">10% Dto</text>
                     </g>
-                    
                     <circle cx="50" cy="50" r="6" fill="#FDF8F3" stroke="#C29A6C" stroke-width="1"/>
                 </svg>
             </div>
@@ -135,19 +133,16 @@
             btn.disabled = true;
             btn.innerText = "Girando...";
 
-            // Lógica de probabilidad estricta (<1% para los premios grandes):
             const rand = Math.random() * 100;
             let targetGajo = 0; 
 
             if (rand < 0.5) {
-                targetGajo = 3; // 50% de descuento (Probabilidad de 0.5%)
+                targetGajo = 3; // 50% de descuento (0.5%)
             } else if (rand < 1.0) {
-                targetGajo = 5; // Taza pequeña gratis (Probabilidad de 0.5%)
+                targetGajo = 5; // Taza pequeña gratis (0.5%)
             } else if (rand < 60) {
-                // Sale "Ciao!" (Casi un 60% de las veces)
                 targetGajo = [0, 2, 4, 6][Math.floor(Math.random() * 4)];
             } else {
-                // Sale "10% de descuento" (Casi un 40% de las veces)
                 targetGajo = [1, 7][Math.floor(Math.random() * 2)];
             }
 
@@ -158,7 +153,6 @@
             wheel.style.transform = `rotate(${totalRotation}deg)`;
 
             setTimeout(() => {
-                // TEXTOS EXACTOS SOLICITADOS
                 const premios = [
                     "Más suerte a la próxima. Ciao!", 
                     "10% de descuento",               
