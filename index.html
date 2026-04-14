@@ -24,15 +24,20 @@
                 <img src="logo.jpg" alt="Logo" class="h-10 w-10 object-contain">
                 <span class="text-xl font-bold tracking-tighter serif uppercase">Essenza</span>
             </div>
+            
             <button onclick="toggleMenu()" class="md:hidden text-[--cafe] focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
+
             <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
                 <a href="#inicio" class="hover:text-[--oro]">Inicio</a>
                 <a href="#productos" class="hover:text-[--oro]">Gama</a>
                 <a href="#ruleta" class="bg-[--cafe] text-white px-4 py-2 rounded-full hover:bg-[--oro] transition">Experiencia</a>
             </div>
         </div>
+
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 flex flex-col items-center py-4 space-y-4 text-[10px] font-bold uppercase tracking-widest">
             <a href="#inicio" onclick="toggleMenu()" class="hover:text-[--oro]">Inicio</a>
             <a href="#productos" onclick="toggleMenu()" class="hover:text-[--oro]">Gama</a>
@@ -44,45 +49,76 @@
         <div class="px-6 max-w-4xl">
             <h1 class="text-6xl md:text-8xl mb-4 uppercase">Essenza</h1>
             <p class="text-xl md:text-2xl italic serif mb-8 opacity-90">"Lo que tomas, te representa"</p>
+            <a href="#productos" class="border border-white px-8 py-3 uppercase text-xs tracking-widest hover:bg-white hover:text-black transition">Ver Colección</a>
         </div>
     </header>
 
-    <section id="ruleta" class="py-24 bg-[--cafe] text-white text-center">
-        <h2 class="text-4xl serif mb-12 text-[--oro]">Experiencia Essenza</h2>
-        <div class="flex justify-center mb-10 relative">
-            <div class="absolute -top-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-red-600 z-30"></div>
-            <div id="wheelWrapper" class="transition-transform duration-[5000ms] ease-[cubic-bezier(0.15,0,0.15,1)]">
-                <svg width="380" height="380" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" fill="#C29A6C" stroke="#fff" stroke-width="0.5"/>
-                    <path d="M50 50 L50 2 A48 48 0 0 1 83.9 14.1 Z" fill="#000"/>
-                    <path d="M50 50 L83.9 14.1 A48 48 0 0 1 98 50 Z" fill="#FDF8F3"/>
-                    <path d="M50 50 L98 50 A48 48 0 0 1 83.9 85.9 Z" fill="#3D2B1F"/>
-                    <path d="M50 50 L83.9 85.9 A48 48 0 0 1 50 98 Z" fill="#C29A6C"/>
-                    <path d="M50 50 L50 98 A48 48 0 0 1 16.1 85.9 Z" fill="#000"/>
-                    <path d="M50 50 L16.1 85.9 A48 48 0 0 1 2 50 Z" fill="#FDF8F3"/>
-                    <path d="M50 50 L2 50 A48 48 0 0 1 16.1 14.1 Z" fill="#3D2B1F"/>
-                    <path d="M50 50 L16.1 14.1 A48 48 0 0 1 50 2 Z" fill="#C29A6C"/>
-
-                    <g font-family="Arial, sans-serif" font-size="1.4" font-weight="bold" text-anchor="middle">
-                        <text fill="white"><textPath href="#p0" startOffset="50%">CIAO!</textPath></text>
-                        <text transform="rotate(22.5 50 50) translate(0 -36)" fill="#fff">CIAO!</text>
-                        <text transform="rotate(67.5 50 50) translate(0 -36)" fill="#000">10% DTO</text>
-                        <text transform="rotate(112.5 50 50) translate(0 -36)" fill="#fff">CIAO!</text>
-                        <text transform="rotate(157.5 50 50) translate(0 -36)" fill="#000">50% DTO</text>
-                        <text transform="rotate(202.5 50 50) translate(0 -36)" fill="#fff">CIAO!</text>
-                        <text transform="rotate(247.5 50 50) translate(0 -36)" fill="#000">TAZA GRATIS</text>
-                        <text transform="rotate(292.5 50 50) translate(0 -36)" fill="#fff">CIAO!</text>
-                        <text transform="rotate(337.5 50 50) translate(0 -36)" fill="#000">10% DTO</text>
-                    </g>
-                    <circle cx="50" cy="50" r="6" fill="#FDF8F3" stroke="#C29A6C" stroke-width="1"/>
-                </svg>
+    <section id="productos" class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl serif text-center mb-16">Nuestra Gama</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <img src="hero.jpg" class="w-full h-64 object-cover rounded-xl mb-4 shadow-lg">
+                <h3 class="text-xl serif">Essenza Puro</h3>
+                <p class="text-xs text-stone-500 uppercase mt-2">Doble Expresso</p>
+            </div>
+            <div>
+                <img src="cafe1.jpg" class="w-full h-64 object-cover rounded-xl mb-4 shadow-lg">
+                <h3 class="text-xl serif">Essenza Calma</h3>
+                <p class="text-xs text-stone-500 uppercase mt-2">Vainilla & Canela</p>
+            </div>
+            <div>
+                <img src="cafe2.jpg" class="w-full h-64 object-cover rounded-xl mb-4 shadow-lg">
+                <h3 class="text-xl serif">Essenza Intenso</h3>
+                <p class="text-xs text-stone-500 uppercase mt-2">Miel & Cacao</p>
             </div>
         </div>
-        <button onclick="spin()" id="spinBtn" class="bg-[--oro] text-[--cafe] px-12 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">Probar Suerte</button>
+    </section>
+
+    <section id="ruleta" class="py-24 bg-[--cafe] text-white text-center">
+        <h2 class="text-4xl serif mb-12 text-[--oro]">Experiencia Essenza</h2>
+        
+        <div class="flex justify-center mb-10 relative">
+            <div class="absolute -top-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-red-600 z-30"></div>
+            
+            <div id="wheelWrapper" class="transition-transform duration-[5000ms] ease-[cubic-bezier(0.15,0,0.15,1)]">
+             <svg width="400" height="400" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#C29A6C" stroke="#fff" stroke-width="0.5"/>
+    
+    <path d="M50 50 L50 2 A48 48 0 0 1 83.9 14.1 Z" fill="#000" stroke="#fff" stroke-width="0.2"/>
+    <path d="M50 50 L83.9 14.1 A48 48 0 0 1 98 50 Z" fill="#FDF8F3" stroke="#000" stroke-width="0.2"/>
+    <path d="M50 50 L98 50 A48 48 0 0 1 83.9 85.9 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
+    <path d="M50 50 L83.9 85.9 A48 48 0 0 1 50 98 Z" fill="#C29A6C" stroke="#000" stroke-width="0.2"/>
+    <path d="M50 50 L50 98 A48 48 0 0 1 16.1 85.9 Z" fill="#000" stroke="#fff" stroke-width="0.2"/>
+    <path d="M50 50 L16.1 85.9 A48 48 0 0 1 2 50 Z" fill="#FDF8F3" stroke="#000" stroke-width="0.2"/>
+    <path d="M50 50 L2 50 A48 48 0 0 1 16.1 14.1 Z" fill="#3D2B1F" stroke="#fff" stroke-width="0.2"/>
+    <path d="M50 50 L16.1 14.1 A48 48 0 0 1 50 2 Z" fill="#C29A6C" stroke="#000" stroke-width="0.2"/>
+
+    <g font-family="Arial" font-size="1.1" font-weight="bold" text-anchor="middle">
+        <text transform="rotate(22.5 50 50) translate(0 -35)" fill="#fff">MÁS SUERTE... CIAO!</text>
+        <text transform="rotate(67.5 50 50) translate(0 -35)" fill="#000">10% DE DESCUENTO</text>
+        <text transform="rotate(112.5 50 50) translate(0 -35)" fill="#fff">MÁS SUERTE... CIAO!</text>
+        <text transform="rotate(157.5 50 50) translate(0 -35)" fill="#000">50% DE DESCUENTO</text>
+        <text transform="rotate(202.5 50 50) translate(0 -35)" fill="#fff">MÁS SUERTE... CIAO!</text>
+        <text transform="rotate(247.5 50 50) translate(0 -35)" fill="#000">TAZA PEQUEÑA GRATIS</text>
+        <text transform="rotate(292.5 50 50) translate(0 -35)" fill="#fff">MÁS SUERTE... CIAO!</text>
+        <text transform="rotate(337.5 50 50) translate(0 -35)" fill="#000">10% DE DESCUENTO</text>
+    </g>
+    
+    <circle cx="50" cy="50" r="6" fill="#FDF8F3" stroke="#C29A6C" stroke-width="1"/>
+</svg>
+            </div>
+        </div>
+
+        <button onclick="spin()" id="spinBtn" class="bg-[--oro] text-[--cafe] px-12 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">
+            Probar Suerte
+        </button>
+        
         <div id="resultBox" class="hidden mt-10 p-6 bg-white border-2 border-[--oro] rounded-xl max-w-sm mx-auto animate-bounce">
             <p id="resultText" class="text-xl font-serif font-bold text-[--cafe]"></p>
         </div>
     </section>
+
+    <footer class="py-10 text-center opacity-50 text-[10px] uppercase tracking-[0.5em]">Essenza 2026</footer>
 
     <script>
         function toggleMenu() {
@@ -95,23 +131,44 @@
             const btn = document.getElementById('spinBtn');
             const resBox = document.getElementById('resultBox');
             const resText = document.getElementById('resultText');
+
             btn.disabled = true;
             btn.innerText = "Girando...";
 
+            // Lógica de probabilidad estricta (<1% para los premios grandes):
             const rand = Math.random() * 100;
-            let target = 0; 
-            if (rand < 0.5) target = 3; 
-            else if (rand < 1.0) target = 5; 
-            else if (rand < 60) target = [0, 2, 4, 6][Math.floor(Math.random() * 4)];
-            else target = [1, 7][Math.floor(Math.random() * 2)];
+            let targetGajo = 0; 
 
-            const degrees = 3600 - (target * 45);
-            wheel.style.transform = `rotate(${degrees}deg)`;
+            if (rand < 0.5) {
+                targetGajo = 3; // 50% de descuento (0.5%)
+            } else if (rand < 1.0) {
+                targetGajo = 5; // Taza pequeña gratis (0.5%)
+            } else if (rand < 60) {
+                targetGajo = [0, 2, 4, 6][Math.floor(Math.random() * 4)];
+            } else {
+                targetGajo = [1, 7][Math.floor(Math.random() * 2)];
+            }
+
+            const degreesPerGajo = 45;
+            const extraSpins = 3600; 
+            const totalRotation = extraSpins - (targetGajo * degreesPerGajo);
+
+            wheel.style.transform = `rotate(${totalRotation}deg)`;
 
             setTimeout(() => {
-                const premios = ["Más suerte a la próxima. Ciao!", "10% de descuento", "Más suerte a la próxima. Ciao!", "50% de descuento", "Más suerte a la próxima. Ciao!", "Taza pequeña gratis", "Más suerte a la próxima. Ciao!", "10% de descuento"];
+                const premios = [
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento",               
+                    "Más suerte a la próxima. Ciao!", 
+                    "50% de descuento",               
+                    "Más suerte a la próxima. Ciao!", 
+                    "Taza pequeña gratis",             
+                    "Más suerte a la próxima. Ciao!", 
+                    "10% de descuento"                
+                ];
+                
                 resBox.classList.remove('hidden');
-                resText.innerText = premios[target];
+                resText.innerText = premios[targetGajo];
                 btn.innerText = "¡Hecho!";
             }, 5000);
         }
